@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Coletas</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+<h1>
+    <i class="fa fa-refresh" aria-hidden="true"></i>
+    <i class="fa fa-minus" aria-hidden="true"></i>
+    SEVEN RESIDUOS
+    
+     <i class="fa fa-minus" aria-hidden="true"></i> 
+     <i class="fa fa-refresh" aria-hidden="true"></i>
+     
+    
+    </h1>
+
+    
+        </div>
+      </div>
+
+
+
+
+
+    <div class="box">
+
+
+    <form action="processar-dados.php" method="post">
+        
+        
+        <fieldset>
+        
+            <br>
+            <legend><b>Agendar Coleta</b></legend>
+
+
+                <label for="nome">Nome do Cliente:</label>
+                <input type="text" name="nome" placeholder="Digite seu nome"  class="inputUser" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" placeholder="exemplo@provedor.com"  class="inputUser" required>
+                
+                <label for="data_coleta">Data da Coleta:</label>
+                <input type="date" id="data_coleta" name="data_coleta" required>
+                
+                <label for="periodo">Período da Coleta:</label>
+                <input placeholder="Manhã ou Tarde" type="text" id="periodo" name="periodo" required>
+
+                <label for="local">Local da Coleta:</label>
+                <input type="text" id="local" name="local" required>
+
+                <label for="telefone">Telefone do Cliente:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+                <br>
+                
+                <button type="submit">Enviar</button>
+
+
+        </fieldset>
+    
+    </form>
+
+</div>
+
+
+
+</div>
+      
+<figure>
+        <img src="imagem/accessability.png  " alt="">
+</figure>
+
+
+<button class="accessibility-button" onclick="toggleAccessibilityMenu()">A</button> 
+<div id="accessibilityMenu" class="accessibility-menu">
+    <button onclick="changeFontSize('small')">Texto Pequeno</button>
+    <button onclick="changeFontSize('medium')">Texto Médio</button>
+    <button onclick="changeFontSize('large')">Texto Grande</button>
+</div> 
+
+<!-- Mudar Contraste claro ou escuro -->
+
+        
+    <div class="content">
+    <form > 
+        
+        <select id="contraste"> 
+            <option >Original</option>
+            <option >Claro</option>
+            <option >Escuro</option>
+        </select>
+
+
+        <!-- <select id="contraste"> 
+            <option value="original">Original</option>
+            <option value="claro">Claro</option>
+            <option value="escuro">Escuro</option>
+        </select> -->
+    </form>
+        <button id="botaoativar">Ativar Contraste</button>
+    </div>
+    
+
+    <!-- onclick nao se usa mais no html, pois isso força o html fazer a função de click entao tirei coloquei o id para o js fazer o trabalho -->
+    <!-- <button id="botaotema" >Alterar</button> -->
+  
+
+
+
+
+
+
+<script>
+    
+
+    function toggleAccessibilityMenu() {
+        const menu = document.getElementById('accessibilityMenu');
+        menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+    }
+
+    function changeFontSize(size) {
+        const root = document.documentElement;
+        if (size === 'small') {
+            root.style.fontSize = '14px';
+        } else if (size === 'medium') {
+            root.style.fontSize = '16px';
+        } else if (size === 'large') {
+            root.style.fontSize = '18px';
+           
+        }
+    }
+
+    window.onload = function() {
+        document.getElementById('accessibilityMenu').style.display = 'none'; // Esconde o menu de acessibilidade inicialmente
+    }
+
+
+</script>
+
+
+<script src="b3_36151279_projeto_integrador_v1/js/script.js"></script>
+
+
+
+<!-- Botões com opção para CONSUTA AGENDAMENTO e CANCELAR AGENDAMENTO -->
+<!-- 
+
+// <div class="outrasopcao">
+
+//     <form action="processar-dados.php" method="post">
+                
+//         <fieldset>
+           
+//             <legend><b>Outras Opções do Agendamento</b></legend>
+            
+//                 <h2>
+                    
+//                     <a href="b3_36151279_projeto_integrador_consulta\index.html" target="_blank">Consultar</a>  
+//                     <a href="b3_36151279_projeto_integrador_cancelar/index.html"target="_blank">Cancelar </a>
+//                 </h2>
+                
+      
+//         </fieldset>
+    
+//     </form>
+
+// </div>
+//  -->
+
+ 
+
+
+
+    
+
+
+
+
+
+
+</body>
+
+</html>

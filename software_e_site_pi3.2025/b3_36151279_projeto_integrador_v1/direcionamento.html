@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarte de Lixo Eletrônico</title>
+    <script>
+        function processarDescarte() {
+            // Pergunta se é pessoa física ou jurídica
+            const tipoPessoa = prompt("Você é Pessoa Física ou Pessoa Jurídica?");
+            if (!tipoPessoa) {
+                alert("Você precisa informar se é Pessoa Física ou Jurídica.");
+                return;
+            }
+
+            // Pergunta o tipo de lixo eletrônico
+            const tipoLixo = prompt("Qual o tipo de lixo eletrônico?");
+            if (!tipoLixo) {
+                alert("Você precisa informar o tipo de lixo eletrônico.");
+                return;
+            }
+
+            // Pergunta a quantidade de lixo eletrônico
+            const quantidadeLixo = parseFloat(prompt("Qual a quantidade de lixo eletrônico em kg?"));
+            if (isNaN(quantidadeLixo) || quantidadeLixo <= 0) {
+                alert("Você precisa informar uma quantidade válida de lixo eletrônico.");
+                return;
+            }
+
+            // Verifica a quantidade de lixo eletrônico e redireciona
+            if (quantidadeLixo < 5) {
+                const numeroWhatsApp = "+5511992755114"; // Substitua pelo número correto
+                const mensagem = encodeURIComponent(`Olá, sou ${tipoPessoa}. Gostaria de descartar ${quantidadeLixo} kg de ${tipoLixo}.`);
+                window.location.href = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+            } else {
+                // Local  do seu sistema de agendamento
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+
+<link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+     <button id = "processar" onclick="processarDescarte()">Iniciar Descarte de Lixo Eletrônico</button> 
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarte de Lixo Eletrônico</title>
+    <style>
+        /* CSS para o alto contraste */
+        .high-contrast {
+            background-color: black;
+            color: white;
+        }
+
+        /* CSS para aumentar o tamanho do texto */
+        .large-text {
+            font-size: 1.5em;
+        }
+
+        /* Estilo dos botões de acessibilidade */
+        .accessibility-buttons {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .accessibility-buttons button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .accessibility-buttons .icon {
+            font-size: 24px;
+            margin-right: 5px;
+        }
+    </style>
+    <script>
+        function handleDescarte() {
+            const tipoPessoa = prompt("Você é pessoa física ou jurídica? (Digite 'física' ou 'jurídica')").toLowerCase();
+            const tipoLixo = prompt("Qual tipo de lixo eletrônico você tem?");
+            const quantidade = parseFloat(prompt("Quantos quilos de lixo eletrônico você tem?"));
+
+            if (isNaN(quantidade) || quantidade < 0) {
+                alert("Por favor, insira uma quantidade válida.");
+                return;
+            }
+
+            if (quantidade < 5) {
+                const whatsappNumber = "1234567890"; // Substitua pelo número de WhatsApp real
+                const message = encodeURIComponent(`Olá, gostaria de saber como posso fazer o descarte de ${quantidade} quilos de ${tipoLixo}.`);
+                window.location.href = `https://wa.me/${whatsappNumber}?text=${message}`;
+            } else {
+                const agendamentoURL = "https://example.com/agendamento"; // Substitua pela URL de agendamento real
+                window.location.href = agendamentoURL;
+            }
+        }
+
+        function toggleContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+
+        function increaseTextSize() {
+            document.body.classList.toggle('large-text');
+        }
+
+        window.onload = handleDescarte;
+    </script>
+</head>
+<body>
+    <h1>Descarte de Lixo Eletrônico</h1>
+    <p>Preencha as informações solicitadas para obter instruções sobre o descarte.</p>
+
+    <!-- Botões de acessibilidade -->
+    <div class="accessibility-buttons">
+        <button onclick="increaseTextSize()">
+            <span class="icon">A+</span>Aumentar Texto
+        </button>
+        <button onclick="toggleContrast()">
+            <span class="icon">⚫</span>Alto Contraste
+        </button>
+    </div>
+</body>
+</html>
