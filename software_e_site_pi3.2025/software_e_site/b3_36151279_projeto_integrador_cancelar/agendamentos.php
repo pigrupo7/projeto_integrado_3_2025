@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
 
     //DIGITOU A SENHA CERTO
     if($senhadigitada === $senhaSecreta){
-        $sql = "SELECT * FROM agendamentos";
+        $sql = "SELECT * FROM coletas";
         $result = $conn->query($sql);
     }else{
         echo "<h1>Senha Incorreta!</h1>";

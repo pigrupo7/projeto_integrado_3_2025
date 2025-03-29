@@ -22,9 +22,8 @@ if($smtp->execute()){
     $row = $result->fetch_row();
     $maxId = $row[0]; // Obtém o valor máximo do ID
     echo "Agendamento realizado com sucesso! Seu protocolo é: " . $maxId;
-}
-
-else{
+    
+}else{
     echo "Erro no envio da mensagem: ".$smtp->error;
 }
 
