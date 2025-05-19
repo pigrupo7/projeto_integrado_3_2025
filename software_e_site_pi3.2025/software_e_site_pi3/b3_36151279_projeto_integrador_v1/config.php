@@ -1,12 +1,16 @@
 <?php
           // esses são os dados a serem usados no servidor web
 //CONFIGURAÇÕS DE CREDENCIAIS
-// $server = 'sql204.byethost3.com';
-// $usuario = 'b3_36151279';
-// $senha = 'Grupo7pi#';
-// $banco = 'b3_36151279_projeto_integrador_v1';
+// $hostname = "localhost";
+// $username = "root";
+// $password = "";
+// $database = "agendamentos";
 
 // //CONEXAO COM NOSSO BANCO DE DADOS
+// $conn = new mysqli($hostname, $username, $password,$database);
+
+
+
 // $conn = new mysqli($server, $usuario, $senha,$banco);
 
 // //VERIFICAR CONEXAO
@@ -18,15 +22,19 @@
 
 //dados a seuguir a ser usado no localhost
 
-$hostname = "localhost";
-$username = "root";
-$password = "";
-$database = "agendamentos";
 
+
+$server = 'sql313.byethost32.com';
+$usuario = 'b32_38593537';
+$senha = 'Grupo7pi#';
+$banco = 'b32_38593537_agendamentos';
+// $banco = 'b3_36151279_projeto_integrador_v1';(anteriomente escrito assim)
 
 
 //CONEXAO COM NOSSO BANCO DE DADOS
-$conn = new mysqli($hostname, $username, $password,$database);
+$conn = new mysqli($server, $usuario, $senha,$banco);
+
+
 
 //VERIFICAR CONEXAO
 if($conn->connect_error){

@@ -14,13 +14,18 @@ $bairro = isset($_POST["bairro"]) ? $_POST["bairro"] : "";
 $cidade = isset($_POST["cidade"]) ? $_POST["cidade"] : "";
 $estado = isset($_POST["estado"]) ? $_POST["estado"] : "";
 $telefone = isset($_POST["telefone"]) ? $_POST["telefone"] : "";
+
+$tipo = isset($_POST["tipo"]) ? $_POST["tipo"] : "";
+
+$quantidade = isset($_POST["quantidade"]) ? $_POST["quantidade"] : "";
+
 $data_atual = isset($_POST["data_atual"]) ? $_POST["data_atual"] : "";
 
 
 
  //PREPARAR COMANDO PARA TABELA
-$smtp = $conn->prepare("INSERT INTO coletas(nome, email, data_coleta, periodo, cep, local, numero, bairro, cidade, estado, telefone, data_atual) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
-$smtp->bind_param("ssssssssssss",$nome, $email, $data_coleta, $periodo, $cep, $local, $numero, $bairro, $cidade, $estado, $telefone, $data_atual);
+$smtp = $conn->prepare("INSERT INTO coletas(nome, email, data_coleta, periodo, cep, local, numero, bairro, cidade, estado, telefone, tipo, quantidade, data_atual) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+$smtp->bind_param("ssssssssssssss",$nome, $email, $data_coleta, $periodo, $cep, $local, $numero, $bairro, $cidade, $estado, $telefone, $tipo , $quantidade, $data_atual);
 
 
 //SE EXECUTAR CORRETAMENTE

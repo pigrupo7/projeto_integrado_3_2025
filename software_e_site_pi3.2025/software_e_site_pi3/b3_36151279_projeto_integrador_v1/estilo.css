@@ -327,3 +327,16 @@ img {
             margin-top: 1x; }
                       }
                     
+
+                      /* configurando o contraste */
+
+                      .contraste-claro {
+                        background-color: #fff;
+                        color: #000;
+                    }
+                    
+                    .contraste-escuro {
+                        background-color: #333;
+                        color: #fff;
+                    }
+                    
